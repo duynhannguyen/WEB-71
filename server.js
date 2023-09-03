@@ -190,20 +190,25 @@ app.get("/posts/:id", (req, res) => {
 // create new post
 app.post("/posts", (req, res) => {
   const { title, description,comment } = req.body;
-  console.log(req.body);
 
-  if (!title || !description) {
+  if (!title || !description ||!comment) {
     res.status(400).json({
       message: "Missing required key",
     });
   }
+  const postId = uuidv4()
   posts.push({
-    id: uuidv4(),
+    id: postId,
     title,
     description,
   });
+  postComment.push({
+    id: postId,
+    comment,
+  })
   res.json({
     data: posts,
+    comment: postComment,
   });
 });
 // cập nhật post thông qua id
@@ -212,13 +217,16 @@ app.put("/posts/:id", (req, res) => {
 console.log("body:", body);
   const { id } = req.params;
   const exitstingPostIndex = posts.findIndex((post) => post.id === id);
-  if (exitstingPostIndex === -1) {
+  const exitstingComment = postComment.findIndex((comment) => comment.id === id)
+  if (exitstingPostIndex === -1 || exitstingComment === -1 ) {
     res.status(400).json({
-      message: "Post not found",
+      message: "Post not found and comment not found ",
     });
   }
   posts[exitstingPostIndex] = { ...posts[exitstingPostIndex], ...body };
-  return res.json({ data: posts });
+  postComment[exitstingComment] = {...postComment[exitstingComment], ...comment}
+  return res.json({ data: posts,
+  dataComent: postComment, });
 });
 // xoá bài post thông qua id
 app.delete("/posts/:id", (req, res) => {
