@@ -232,12 +232,14 @@ console.log("body:", body);
 app.delete("/posts/:id", (req, res) => {
   const { id } = req.params;
   const existingPostIndex = posts.findIndex((post) => post.id === id);
-  if (existingPostIndex === -1) {
+  const exitstingComment = postComment.findIndex((comment) => comment.id === id);
+  if (existingPostIndex === -1 || exitstingComment === -1) {
     res.status(400).json({
-      message: "Post not found",
+      message: "Post and comment not found",
     });
   }
   posts.splice(existingPostIndex, 1);
+  postComment.splice(exitstingComment, 1);
   return res.json({
     data: "Delete successfully",
   });
