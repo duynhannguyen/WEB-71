@@ -45,3 +45,4 @@ const employeesInfo = [
   }
    console.log(getTotalSalaryOfEmployee("Alex"));
    console.log(getTotalSalaryOfEmployee("Nhân"));
+   console.log(getTotalSalaryOfEmployee("David"));
