@@ -9,9 +9,9 @@ router.get("/", (req,res) => {
     const { apiKey } = req.query;
     const userIndex = users.findIndex((user) => user.apiKey === apiKey);
     staticsticMiddleware("teacher", userIndex)
-    res.json({
-        staticsticUser
-    })
+    // res.json({
+    //     staticsticUser
+    // })
 })
 
 export default router

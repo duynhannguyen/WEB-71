@@ -9,7 +9,7 @@ router.get("/", (req,res) => {
     const userIndex = users.findIndex((user) => user.apiKey === apiKey);
     staticsticMiddleware("student", userIndex)
     res.json({
-        staticsticUser
+        message: "Student Data"
     })
 })
 
