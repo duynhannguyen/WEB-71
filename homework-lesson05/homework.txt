@@ -1,5 +1,5 @@
 1. db.restaurants.find()
-2. lesson05-homework> db.restaurants.find( {"address.zipcode": "11209" } )
+2. db.restaurants.find( {"address.zipcode": "11209" } )
 3. db.restaurants.find( {cuisine: "American "} )
 4. db.restaurants.find( {borough: "Brooklyn"} )
 5. db.restaurants.find( {borough: "Manhattan"} )
