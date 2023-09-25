@@ -1,6 +1,6 @@
 {
   "terminal.integrated.customGlyphs": false,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }
