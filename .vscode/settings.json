@@ -2,5 +2,9 @@
   "terminal.integrated.customGlyphs": false,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "terminal.integrated.letterSpacing": 1.5,
+  "editor.lineHeight": 1.6,
+  "terminal.integrated.lineHeight": 1,
+  "editor.letterSpacing": 1.5
 }
